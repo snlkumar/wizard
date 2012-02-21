@@ -1,0 +1,25 @@
+<table>
+  <tr>
+    <th>Id</th>
+    <th>Section</th>
+    <th>Link</th>
+    <th>Description</th>
+    <th></th>
+    <th></th>
+    <th></th>
+ </tr>
+
+<% for homepage in @homepages %>
+
+  <tr>
+    <td><%= homepage.id %></td>
+    <td><%= homepage.section %></td>
+    <td><%= homepage.link %></td>
+    <td><%= homepage.description %></td>
+    <td><%= link_to 'Show', homepage %></td>
+    <td><%= link_to 'Edit', edit_homepage_path(homepage) %></td>
+    <td><%= link_to 'Destroy', homepage, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<%end%>
+
+</table>

@@ -1,0 +1,38 @@
+<%= form_for(@search) do |f| %>
+  <% if @search.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@search.errors.count, "error") %> prohibited this search from being saved:</h2>
+
+      <ul>
+      <% @search.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+<script>
+jQuery(function() {
+    var easy = [
+        "one",
+        "two",
+        "three",
+    ];
+    jQuery( "#tags" ).autocomplete({
+        source: easy
+    });
+});
+</script>
+
+
+
+<div class="demo">
+
+<div class="ui-widget">
+<label for="tags">Tags: </label>
+<input id="tags">
+</div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

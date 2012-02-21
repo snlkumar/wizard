@@ -1,0 +1,15 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Shipping name:</b>
+  <%= @order.shipping_name %>
+</p>
+
+<p>
+  <b>Billing name:</b>
+  <%= @order.billing_name %>
+</p>
+
+
+<%= link_to 'Edit', edit_order_path(@order) %> |
+<%= link_to 'Back', orders_path %>

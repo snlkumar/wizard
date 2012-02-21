@@ -1,0 +1,23 @@
+<h1>Listing homepages</h1>
+<div id = "testsearch">
+   <%=render :partial => 'homepage'%>     
+</div>
+<%= form_tag homepages_path, :method => 'get', :remote => true do %>
+<%= label_tag(:search, "Search for:") %> 
+<%= text_field_tag :search, params[:search]%>
+<%= submit_tag "search", :name => nil %>
+<%end%>
+
+<%= set_focus_to_id 'search' %>               
+
+<script>
+document.observe("dom:loaded", function() {   // ensures the page is loaded first
+new Form.Element.Observer(                    // Observes the text_field_tag every 2 seconds
+  'search',
+  2, 
+  respondToChange                         //refrences the function in the Layout <head> 
+)                                         // on a change in search calls respondToChange
+});
+</script>
+<br />
+<%= link_to 'New Homepage', new_homepage_path %>
