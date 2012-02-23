@@ -21,6 +21,7 @@ gem 'jquery-rails'
 gem 'execjs'
 gem 'therubyracer'
 gem 'declarative_authorization' 
+gem 'mysql2'
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 
